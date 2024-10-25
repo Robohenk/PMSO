@@ -31,7 +31,7 @@ The project primarily uses [PM4Py](https://pm4py.fit.fraunhofer.de/) to handle X
    git clone https://github.com/username/your-repo-name.git
    cd your-repo-name
 
-2. **Install dependencies:**:
+2. **Install dependencies**:
    
    ```bash
    pip install -r requirements.txt
@@ -39,58 +39,71 @@ The project primarily uses [PM4Py](https://pm4py.fit.fraunhofer.de/) to handle X
 ## Usage
 To run these scripts, follow the steps below to ensure smooth data flow between them:
 
-1. Convert raw data to XES event logs: Run 01_convert_to_xes.py to convert your raw data into XES event log format.
-2. Extract KPIs from event logs: Use 02_extract_event_log_indicators.py to extract relevant KPIs from the event logs.
-3. Perform process mining and generate models: Run 03_extract_process_mining_indicators.py to perform process discovery and generate process models.
-4. Summarize experimental metrics: Use 04_summaries_per_experiment.py to generate summaries per experiment.
-5. Combine summaries: Run 05_combined_summaries.py to combine all summaries into a single file.
-6. Generate statistical insights: Use 06_combined_summaries_with_stats.py to calculate cumulative statistics across experiments.
+1. Convert raw data to XES event logs: Run `01_convert_to_xes.py` to convert your raw data into XES event log format.
+2. Extract KPIs from event logs: Use `02_extract_event_log_indicators.py` to extract relevant KPIs from the event logs.
+3. Perform process mining and generate models: Run `03_extract_process_mining_indicators.py` to perform process discovery and generate process models.
+4. Summarize experimental metrics: Use `04_summaries_per_experiment.py` to generate summaries per experiment.
+5. Combine summaries: Run `05_combined_summaries.py` to combine all summaries into a single file.
+6. Generate statistical insights: Use `06_combined_summaries_with_stats.py` to calculate cumulative statistics across experiments.
 
-Scripts
-01_convert_to_xes.py
+## Scripts
+
+### 01_convert_to_xes.py
 Converts tabular data from a pandas DataFrame into XES event log format.
 
-Inputs: DataFrame with required columns (e.g., 'uniqueID', 'event', 'timeStamp').
-Outputs: An XES file compatible with process mining tools.
-02_extract_event_log_indicators.py
-Processes the XES event log files to extract KPIs such as case durations.
+**Inputs**: `DataFrame` with required columns (e.g., `uniqueID`, `event`, `timeStamp`).
 
-Inputs: XES files.
-Outputs: A text file with calculated KPIs for each event log.
-03_extract_process_mining_indicators.py
-Performs process discovery on XES event logs using the Inductive Miner algorithm, generating Petri net models and visualizations.
+**Outputs**: An `XES file` compatible with process mining tools.
 
-Inputs: XES files from a specified input directory.
-Outputs: PNML files containing Petri nets and corresponding PNG images.
-04_summaries_per_experiment.py
+### 02_extract_event_log_indicators.py
+Processes the `XES event log files` to extract KPIs such as case durations.
+
+**Inputs**: `XES files`.
+
+**Outputs**: A `text file` with calculated KPIs for each event log.
+
+### 03_extract_process_mining_indicators.py
+Performs process discovery on `XES event logs` using the `Inductive Miner algorithm`, generating `Petri net models` and visualizations.
+
+**Inputs**: `XES files` from a specified input directory.
+
+**Outputs**: `PNML files` containing Petri nets and corresponding PNG images.
+
+### 04_summaries_per_experiment.py
 Generates summary files for each experiment, aggregating metrics and cycle time data by experiment and run.
 
-Inputs: Metrics and cycle time text files organized by experiment and run.
-Outputs: A summary file per experiment with consolidated metrics and cycle times.
-05_combined_summaries.py
+**Inputs**: Metrics and cycle time text files organized by experiment and run.
+
+**Outputs**: A summary file per experiment with consolidated metrics and cycle times.
+
+### 05_combined_summaries.py
 Combines all summary files into a single text file, consolidating metrics across all experiments.
 
-Inputs: Summary files organized by experiment.
-Outputs: A combined text file summarizing results from all experiments.
-06_combined_summaries_with_stats.py
+**Inputs**: Summary files organized by experiment.
+
+**Outputs**: A combined text file summarizing results from all experiments.
+
+### 06_combined_summaries_with_stats.py
 Calculates cumulative statistics, including average and standard deviation, for precision and cycle times across experiments.
 
-Inputs: Summary files from previous experiments.
-Outputs: A text file with consolidated metrics and cumulative statistics.
+**Inputs**: Summary files from previous experiments.
+
+**Outputs**: A `text file` with consolidated metrics and cumulative statistics.
 
 ## Citation
 If you use this software or related material, please consider citing the following work:
 
-Scientific Paper (pending publication):
+BiBTeX:
 
-@article{bemthuis2024processminingpaper,
-  author = {Bemthuis, Rob},
-  title = {Towards Process Mining-based Simulation Optimization},
-  journal = {Journal Name},
-  year = {2024},
-  note = {Under review}
-}
-Your citations help support the continued development of this project.
+```bibtex
+   @article{bemthuis2024towards,
+    author = {Bemthuis, Rob},
+    title = {Towards Process Mining-based Simulation Optimization},
+    journal = {Journal Name},
+    year = {2024},
+    note = {Under review}
+  }
+```
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
