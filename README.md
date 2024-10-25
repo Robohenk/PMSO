@@ -6,6 +6,8 @@ Repository for the manuscript **"Towards Process Mining-based Simulation Optimiz
 
 This repository contains a series of Python scripts developed to support event log analysis, process mining, and key performance indicator (KPI) extraction. The scripts automate the conversion of raw data to structured event logs, perform process mining, and consolidate metrics for detailed performance analysis.
 
+**Data Source**: The input data for these scripts is derived from the dataset provided in the repository "Data underlying the paper Using agent-based simulation for emergent behavior detection in cyber-physical systems" ([DOI](https://doi.org/10.4121/14743263.v1)). This dataset is associated with the paper "Using agent-based simulation for emergent behavior detection in cyber-physical systems" ([DOI](https://doi.org/10.1109/WSC48552.2020.9383956)).
+
 The project primarily uses [PM4Py](https://pm4py.fit.fraunhofer.de/) to handle XES log files, perform process discovery, and extract meaningful process metrics.
 
 ## Table of Contents
@@ -19,7 +21,6 @@ The project primarily uses [PM4Py](https://pm4py.fit.fraunhofer.de/) to handle X
   - [04_summaries_per_experiment.py](#04_summaries_per_experimentpy)
   - [05_combined_summaries.py](#05_combined_summariespy)
   - [06_combined_summaries_with_stats.py](#06_combined_summaries_with_statspy)
-- [Directory Structure](#directory-structure)
 - [Citation](#citation)
 - [License](#license)
 
@@ -39,12 +40,13 @@ The project primarily uses [PM4Py](https://pm4py.fit.fraunhofer.de/) to handle X
 ## Usage
 To run these scripts, follow the steps below to ensure smooth data flow between them:
 
-1. Convert raw data to XES event logs: Run `01_convert_to_xes.py` to convert your raw data into XES event log format.
-2. Extract KPIs from event logs: Use `02_extract_event_log_indicators.py` to extract relevant KPIs from the event logs.
-3. Perform process mining and generate models: Run `03_extract_process_mining_indicators.py` to perform process discovery and generate process models.
-4. Summarize experimental metrics: Use `04_summaries_per_experiment.py` to generate summaries per experiment.
-5. Combine summaries: Run `05_combined_summaries.py` to combine all summaries into a single file.
-6. Generate statistical insights: Use `06_combined_summaries_with_stats.py` to calculate cumulative statistics across experiments.
+1. **Prepare the input data**: Download the dataset from the ([4TU.ResearchData repository](https://doi.org/10.4121/14743263.v1)) and place it in the `data/raw_data` directory.
+2. **Convert raw data to XES event logs**: Run `01_convert_to_xes.py` to convert your raw data into XES event log format.
+3. **Extract KPIs from event logs**: Use `02_extract_event_log_indicators.py` to extract relevant KPIs from the event logs.
+4. **Perform process mining and generate models**: Run `03_extract_process_mining_indicators.py` to perform process discovery and generate process models.
+5. **Summarize experimental metrics**: Use `04_summaries_per_experiment.py` to generate summaries per experiment.
+6. **Combine summaries**: Run `05_combined_summaries.py` to combine all summaries into a single file.
+7. **Generate statistical insights**: Use `06_combined_summaries_with_stats.py` to calculate cumulative statistics across experiments.
 
 ## Scripts
 
@@ -91,7 +93,9 @@ Calculates cumulative statistics, including average and standard deviation, for 
 **Outputs**: A `text file` with consolidated metrics and cumulative statistics.
 
 ## Citation
-If you use this software or related material, please consider citing the following work:
+If you are using materials in your scientific work, please cite the original manuscript:
+
+**Rob Bemthuis**. (n.d.). *Towards Process Mining-based Simulation Optimization*. Journal/Conference. [DOI](https://doi.org/t.b.d.)
 
 BiBTeX:
 
@@ -99,7 +103,7 @@ BiBTeX:
    @article{bemthuis2024towards,
     author = {Bemthuis, Rob},
     title = {Towards Process Mining-based Simulation Optimization},
-    journal = {Journal Name},
+    journal = {Journal/Conference Name},
     year = {2024},
     note = {Under review}
   }
